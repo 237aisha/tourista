@@ -5,12 +5,18 @@
 {% block content %}
 <br>
 <div class="row">
+
   {% for destination in destinations %}
-  <a href="{% url 'destination-detail' destination.id %}">
+  <div class="col-md-6">
+    
+      <div class="card my-card" style="width: 32rem; height: 26rem;">
+  <a href="{% url 'destination-detail' destination.id %}" style="color: #f06500;font-weight: bold;">
+     <h1>  <p> {{destination.name}}</p></a>
+     </h1>
+      <p>Activities: {{destination.activities}}</p>
     <img src="{{destination.pretty_picture.url}}" />
-    <p>{{destination.name}}</p>
-    <p>{{destination.activities}}</p>
-  </a>
+      </div></div>
   {% endfor %}
 </div>
 {% endblock content %}
+

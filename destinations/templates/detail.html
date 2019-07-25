@@ -3,15 +3,28 @@
 {% block title %}Detail{% endblock title %} 
 
 {% block content %}
-    <p>{{destination.name}}</p>
-    <p>{{destination.description}}</p>
-    <p>{{destination.activities}}</p>
-    <p><img src="{{destination.pretty_picture.url}}"></p>
-    <p>{{destination.optimal_visiting_season}}</p>
-    <a href="{% url 'destination-update' destination.id %}">
-        <button>Update</button>
-    </a>
-    <a href="{% url 'destination-delete' destination.id %}">
-        <button>Delete</button>
-    </a>
+<br>
+<div class="card">
+        <h5 class="card-header" style="background-color: #a8a8a8">Destination Info</h5>
+        <div class="back"> 
+                <div class="card-body"style="background-color: #d4d8d9">
+    <h1> <p>{{destination.name}}</p></h1>
+    <h2><p>Description:  </h2> {{destination.description}}</p> 
+    <h2> <p>Activities:  </h2>{{destination.activities}}</p> 
+<h2><p>Visiting Season:  </h2>{{destination.optimal_visiting_season}}</p> 
+    <p><img src="{{destination.pretty_picture.url}}" style=" width: 65rem"></p>
+    
+    <div class="row text-center">
+            <div class="col-md-6">
+                   
+    <a href="{% url 'destination-update' destination.id %}"type="button" class="btn btn-info" class="btn btn-outline-primary btn-block">Update</a>
+    
+
+    <a href="{% url 'destination-delete' destination.id %}"type="button" class="btn btn-danger" class="btn btn-outline-danger btn-block">Delete</a>
+
+    </div></div></div></div></div>
 {% endblock content %}
+
+
+    
+   
